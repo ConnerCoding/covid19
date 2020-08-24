@@ -3,7 +3,7 @@
 
 A web app where you can find real-time data on COVID-19 statistics. Try the [live demo](https://connercoding.github.io/covid19/).
 
-![Image of UI](https://github.com/ConnerCoding/covid19/blob/master/src/images/image.png)
+![Image of UI](https://github.com/ConnerCoding/covid19/blob/master/src/images/appIMG.png)
 
 
 Stack
