@@ -1,10 +1,11 @@
 import React from 'react';
-import {Grid, CardContent, Card, Typography, StylesProvider} from '@material-ui/core';
+import {Grid, CardContent, Card, Typography} from '@material-ui/core';
 import styles from './Cards.module.css';
 import CountUp from 'react-countup';
 import cx from 'classnames';
 
 const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate }}) => {
+    // Render loading while waiting for data
     if (!confirmed) {
         return 'Loading...';
     }
@@ -12,6 +13,7 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate }}) => {
     return(
         <div className={styles.container}>
             <Grid container spacing={3} justify='center'>
+                {/* TODO too much repitition, refactor to one grid item rendered to three */}
                 <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected)}>
                     <CardContent>
                         <Typography color='textSecondary' gutterBottom>Infected</Typography>
