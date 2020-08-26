@@ -3,6 +3,9 @@ import {countriesAPI} from '../../api';
 import {FormControl, NativeSelect} from '@material-ui/core';
 import styles from './CountryPicker.module.css';
 
+// Bring in countrychange method from App so we can set the
+// method to hit the API with the country via the NativeSelect 
+// component with e.target.value 
 const CountryPicker = ({handleCountryChange}) => {
     const [countries, setCountries] = useState([]);
 
