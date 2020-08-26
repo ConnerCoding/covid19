@@ -1,6 +1,9 @@
 import axios from 'axios';
 
 const url = "https://covid19.mathdro.id/api";
+
+// If country is passed in, fetch data for specific
+// country, otherwise get global data
 export const fetchData = async (country) => {
     let dynamicURL = url;
     if (country) {
@@ -15,6 +18,7 @@ export const fetchData = async (country) => {
     }
 }
 
+// Get data for daily data points to plot global line chart
 export const fetchDailyData = async () => {
     try {
         const { data } = await axios.get(`${url}/daily`);
@@ -31,6 +35,7 @@ export const fetchDailyData = async () => {
     }
 }
 
+// Fetch list of countries for the country picker dropdown
 export const countriesAPI = async () => {
     try {
         const { data: {countries} } = await axios.get(`${url}/countries`);
