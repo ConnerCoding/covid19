@@ -31,6 +31,8 @@ class App extends Component {
             <div className={styles.container}>
                 <img className={styles.image} src={headerImage} alt="COVID-19"/>
                 <Cards data={data}/>
+                {/* Pass countrychange into countrypicker - this is a mutual feedback loop for
+                getting country and sending country endpoint to the API */}
                 <CountryPicker handleCountryChange={this.handleCountryChange} />
                 <Chart data={data} country={country} />
             </div>
