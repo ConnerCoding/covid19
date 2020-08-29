@@ -41,7 +41,7 @@ export const countriesAPI = async () => {
         const { data: {countries} } = await axios.get(`${url}/countries`);
         return countries;
     } catch (error) {
-        console.log(error);
+        return error;
     }
     
 }
