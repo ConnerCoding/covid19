@@ -6,6 +6,7 @@ import styles from './Chart.module.css';
 const Chart = ({ data: {confirmed, recovered, deaths}, country }) => {
     const [dailyData, setDailyData] = useState({});
 
+    // Fetch the global daily data from the API and place into state
     useEffect(() => {
         const getDailyData = async () => {
             setDailyData(await fetchDailyData());
@@ -15,6 +16,7 @@ const Chart = ({ data: {confirmed, recovered, deaths}, country }) => {
 
     // Render line chart if we are showing global data
     const lineChart = (
+        // If there is length, that means we are rendering global daily data - otherwise null
         dailyData.length ?
         (<Line 
             data={{
@@ -37,6 +39,7 @@ const Chart = ({ data: {confirmed, recovered, deaths}, country }) => {
 
     // Render bar chart for showing country-specific data
     const barChart = (
+                // If confirmed prop has value, that means we received country-specific data
                 confirmed ? (
                     <Bar 
                         data={{
