@@ -13,6 +13,7 @@ const Chart = ({ data: {confirmed, recovered, deaths}, country }) => {
         getDailyData();
     }, []);
 
+    // Render line chart if we are showing global data
     const lineChart = (
         dailyData.length ?
         (<Line 
@@ -34,6 +35,7 @@ const Chart = ({ data: {confirmed, recovered, deaths}, country }) => {
         />) : null
     )
 
+    // Render bar chart for showing country-specific data
     const barChart = (
                 confirmed ? (
                     <Bar 
